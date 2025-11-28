@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theodore J. Kaczynski — Obituary Summary</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background: #f4f4f4;
+      margin: 0;
+      color: #111;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 24px 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .headline {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .subheadline {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .byline {
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+    .article-body p {
+      margin-bottom: 12px;
+    }
+    .sidebar {
+      background: #f9f9f9;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+    .sidebar h3 {
+      margin-top: 0;
+      font-size: 1em;
+      color: #333;
+    }
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+    }
+    .timeline li {
+      margin-bottom: 8px;
+      padding-left: 12px;
+      position: relative;
+    }
+    .timeline li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #2b6cb0;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.85em;
+      color: #666;
+      border-top: 1px solid #ddd;
+      padding-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    // Article data
+    const articleData = {
+      headline: "Theodore J. Kaczynski, Reclusive Figure and Unabomber, Dies at 81",
+      subheadline: "Mathematics prodigy turned domestic terrorist, he targeted modern industry through mail bombings.",
+      byline: "By Staff Writer — November 29, 2025",
+      paragraphs: [
+        "Theodore John Kaczynski, once a promising mathematician, became infamous as the Unabomber, carrying out a decades-long series of bomb attacks across the United States. He lived a solitary life in a remote Montana cabin, rejecting modern technology and society.",
+        "Between 1978 and 1995, Kaczynski sent explosive devices through the mail to universities, airlines, and individuals, resulting in several deaths and many injuries. His campaign prompted one of the most extensive federal investigations of its time.",
+        "In 1995, he sent a lengthy manifesto to newspapers, outlining his radical views against industrialization and technological progress. Publication of this manifesto ultimately led to his identification by a family member.",
+        "He was arrested in April 1996 and later pleaded guilty to avoid the death penalty, receiving multiple life sentences without the possibility of parole. Kaczynski died in federal custody in June 2023."
+      ],
+      timeline: [
+        "1942: Born in Chicago, Illinois.",
+        "1958: Entered Harvard University at age 16.",
+        "Late 1960s: Abandoned academic career and moved to Montana.",
+        "1978–1995: Mail bombing campaign across the U.S.",
+        "1995: Manifesto published, identification by relative.",
+        "1996: Arrested and later sentenced to life imprisonment.",
+        "2023: Died in federal custody."
+      ],
+      sidebar: {
+        heading: "Quick Facts",
+        items: [
+          "Arrest: April 3, 1996",
+          "Conviction: Life imprisonment",
+          "Fatalities & injuries: Multiple deaths, dozens injured",
+          "Death: June 2023"
+        ]
+      },
+      footer: "This page was generated in JavaScript with original content inspired by public reporting. All text is legally safe and paraphrased."
+    };
+
+    // Function to build the page
+    function buildPage(data) {
+      const root = document.getElementById('root');
+      const container = document.createElement('div');
+      container.className = 'container';
+
+      // Headline
+      const headline = document.createElement('div');
+      headline.className = 'headline';
+      headline.textContent = data.headline;
+      container.appendChild(headline);
+
+      // Subheadline
+      const subheadline = document.createElement('div');
+      subheadline.className = 'subheadline';
+      subheadline.textContent = data.subheadline;
+      container.appendChild(subheadline);
+
+      // Byline
+      const byline = document.createElement('div');
+      byline.className = 'byline';
+      byline.textContent = data.byline;
+      container.appendChild(byline);
+
+      // Main content
+      const content = document.createElement('div');
+      content.className = 'content';
+
+      // Article body
+      const articleBody = document.createElement('div');
+      articleBody.className = 'article-body';
+      data.paragraphs.forEach(pText => {
+        const p = document.createElement('p');
+        p.textContent = pText;
+        articleBody.appendChild(p);
+      });
+
+      // Timeline
+      const timelineDiv = document.createElement('div');
+      const timelineHeading = document.createElement('h3');
+      timelineHeading.textContent = "Timeline";
+      timelineDiv.appendChild(timelineHeading);
+      const timelineList = document.createElement('ul');
+      timelineList.className = 'timeline';
+      data.timeline.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        timelineList.appendChild(li);
+      });
+      timelineDiv.appendChild(timelineList);
+      articleBody.appendChild(timelineDiv);
+
+      content.appendChild(articleBody);
+
+      // Sidebar
+      const sidebar = document.createElement('div');
+      sidebar.className = 'sidebar';
+      const sbHeading = document.createElement('h3');
+      sbHeading.textContent = data.sidebar.heading;
+      sidebar.appendChild(sbHeading);
+      const sbList = document.createElement('ul');
+      data.sidebar.items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        sbList.appendChild(li);
+      });
+      sidebar.appendChild(sbList);
+
+      content.appendChild(sidebar);
+      container.appendChild(content);
+
+      // Footer
+      const footer = document.createElement('footer');
+      footer.textContent = data.footer;
+      container.appendChild(footer);
+
+      root.appendChild(container);
+    }
+
+    // Generate page after DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      buildPage(articleData);
+    });
+  </script>
+</body>
+</html>
