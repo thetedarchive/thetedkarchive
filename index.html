@@ -59,6 +59,12 @@
       text-align: justify;
     }
 
+    .article-body img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
     .sidebar {
       flex: 1;
       background-color: #262626; /* distinct dark gray */
@@ -130,6 +136,23 @@
         "In 1995, he authored a manifesto condemning technological progress and industrialization, a document that ultimately led to his identification by a family member due to its distinctive language.",
         "He was arrested in 1996 and received multiple life sentences to avoid the death penalty. Kaczynski remained in custody until his death in 2023, leaving a controversial and thought-provoking legacy."
       ],
+      images: [
+        {
+          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Ted_Kaczynski.jpg/440px-Ted_Kaczynski.jpg",
+          alt: "Ted Kaczynski portrait",
+          position: "top"
+        },
+        {
+          src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Abandoned_cabin.jpg",
+          alt: "Remote cabin in Montana",
+          position: "middle"
+        },
+        {
+          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Montana_forest.jpg/440px-Montana_forest.jpg",
+          alt: "Montana forest",
+          position: "bottom"
+        }
+      ],
       timeline: [
         "1942: Born in Chicago, Illinois.",
         "1958: Accepted to Harvard University at age 16.",
@@ -156,6 +179,15 @@
       const container = document.createElement('div');
       container.className = 'container';
 
+      // Top image
+      const topImg = data.images.find(img => img.position === "top");
+      if(topImg){
+        const imgEl = document.createElement('img');
+        imgEl.src = topImg.src;
+        imgEl.alt = topImg.alt;
+        container.appendChild(imgEl);
+      }
+
       const headline = document.createElement('div');
       headline.className = 'headline';
       headline.textContent = data.headline;
@@ -176,12 +208,33 @@
 
       const articleBody = document.createElement('div');
       articleBody.className = 'article-body';
-      data.paragraphs.forEach(pText => {
+      data.paragraphs.forEach((pText, index) => {
         const p = document.createElement('p');
         p.textContent = pText;
         articleBody.appendChild(p);
+
+        // Insert middle image after second paragraph
+        if(index === 1){
+          const middleImg = data.images.find(img => img.position === "middle");
+          if(middleImg){
+            const imgEl = document.createElement('img');
+            imgEl.src = middleImg.src;
+            imgEl.alt = middleImg.alt;
+            articleBody.appendChild(imgEl);
+          }
+        }
       });
 
+      // Insert bottom image at the end of article body
+      const bottomImg = data.images.find(img => img.position === "bottom");
+      if(bottomImg){
+        const imgEl = document.createElement('img');
+        imgEl.src = bottomImg.src;
+        imgEl.alt = bottomImg.alt;
+        articleBody.appendChild(imgEl);
+      }
+
+      // Timeline
       const timelineDiv = document.createElement('div');
       const tHeading = document.createElement('h3');
       tHeading.textContent = "Timeline";
@@ -198,6 +251,7 @@
 
       content.appendChild(articleBody);
 
+      // Sidebar
       const sidebar = document.createElement('div');
       sidebar.className = 'sidebar';
       const sbHeading = document.createElement('h3');
