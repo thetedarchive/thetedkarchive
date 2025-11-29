@@ -3,34 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ted Kaczynski — Obituary Summary</title>
+  <title>Ted Kaczynski – Life and Legacy</title>
   <style>
+    /* Body and global styles */
     body {
-      font-family: Georgia, serif;
-      background: #f4f4f4;
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
       margin: 0;
-      color: #111;
+      padding: 0;
       line-height: 1.6;
     }
+
+    /* Main container */
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
-      background: #fff;
-      padding: 24px 32px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 30px 40px;
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.7);
     }
-    .headline { font-size: 2em; font-weight: bold; margin-bottom: 4px; }
-    .subheadline { font-size: 1.2em; color: #555; margin-bottom: 12px; }
-    .byline { font-size: 0.9em; color: #888; margin-bottom: 20px; }
-    .content { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-    .article-body p { margin-bottom: 12px; }
-    .sidebar { background: #f9f9f9; padding: 12px 16px; border-radius: 6px; font-size: 0.9em; }
-    .sidebar h3 { margin-top: 0; font-size: 1em; color: #333; }
-    .timeline { list-style: none; padding-left: 0; }
-    .timeline li { margin-bottom: 8px; padding-left: 12px; position: relative; }
-    .timeline li::before { content: '•'; position: absolute; left: 0; color: #2b6cb0; }
-    footer { margin-top: 40px; font-size: 0.85em; color: #666; border-top: 1px solid #ddd; padding-top: 12px; }
+
+    /* Headline and subheadline */
+    .headline {
+      font-family: 'Courier New', monospace;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #ff6b6b;
+      margin-bottom: 10px;
+    }
+
+    .subheadline {
+      font-size: 1.3em;
+      font-style: italic;
+      color: #f0a500;
+      margin-bottom: 15px;
+    }
+
+    .byline {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    /* Layout */
+    .content {
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+    }
+
+    .article-body {
+      flex: 3;
+    }
+
+    .article-body p {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 1;
+      background-color: #2c2c2c;
+      border-left: 3px solid #ff6b6b;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-size: 0.95em;
+    }
+
+    .sidebar h3 {
+      color: #f0a500;
+      margin-top: 0;
+      font-size: 1.1em;
+    }
+
+    .sidebar ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .sidebar li {
+      margin-bottom: 8px;
+    }
+
+    /* Timeline */
+    .timeline {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 15px;
+    }
+
+    .timeline li {
+      margin-bottom: 10px;
+      padding-left: 18px;
+      position: relative;
+      border-left: 2px solid #f0a500;
+    }
+
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -7px;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background-color: #ff6b6b;
+      border-radius: 50%;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 35px;
+      font-size: 0.85em;
+      color: #999;
+      border-top: 1px solid #333;
+      padding-top: 15px;
+    }
   </style>
 </head>
 <body>
@@ -38,34 +128,34 @@
 
   <script>
     const articleData = {
-      headline: "Ted Kaczynski: From Math Prodigy to Unabomber",
-      subheadline: "A reclusive genius whose radical opposition to technology changed the course of criminal investigations.",
-      byline: "By Staff Summary — November 29, 2025",
+      headline: "Ted Kaczynski: The Recluse Who Challenged Technology",
+      subheadline: "Exploring the life and actions of a mathematical mind gone radical.",
+      byline: "By Staff Writer — November 29, 2025",
       paragraphs: [
-        "Theodore John Kaczynski, widely known as the Unabomber, was a highly intelligent mathematician who turned away from academia to live in isolation. His rejection of modern industrial society fueled a long-running campaign of mail bombings that brought him international notoriety.",
-        "Between the late 1970s and mid-1990s, Kaczynski sent explosives to universities, airlines, and other targets, injuring dozens and killing several. His attacks sparked one of the most extensive federal investigations in U.S. history.",
-        "In 1995, he published a manifesto outlining his philosophical opposition to technological progress and industrialization. This document eventually led to his identification by a relative who recognized the writing style.",
-        "Arrested in 1996, Kaczynski pled guilty to avoid the death penalty and was sentenced to multiple life terms without the possibility of parole. He remained incarcerated until his death in 2023, leaving behind a complex and controversial legacy."
+        "Theodore John Kaczynski, often referred to as the Unabomber, was a highly intelligent mathematician who abandoned academic life for solitude in the Montana wilderness. Rejecting modern industrial society, he conducted a long campaign of mail bombings that shook institutions across the United States.",
+        "From 1978 to 1995, Kaczynski sent explosive devices targeting universities, airlines, and other organizations, resulting in multiple deaths and numerous injuries. His acts prompted one of the most intensive manhunts and investigations in American history.",
+        "In 1995, he authored a manifesto condemning technological progress and industrialization, a document that ultimately led to his identification by a family member due to its distinctive language.",
+        "He was arrested in 1996 and received multiple life sentences to avoid the death penalty. Kaczynski remained in custody until his death in 2023, leaving a controversial and thought-provoking legacy."
       ],
       timeline: [
         "1942: Born in Chicago, Illinois.",
-        "1958: Enrolled at Harvard University at age 16.",
-        "Late 1960s: Left academia, moved to remote Montana cabin.",
-        "1978–1995: Conducted mail bombing campaign.",
-        "1995: Manifesto published in major newspapers.",
-        "1996: Arrested and later sentenced to life imprisonment.",
-        "2023: Passed away in federal custody."
+        "1958: Accepted to Harvard University at age 16.",
+        "Late 1960s: Leaves academia; moves to remote cabin in Montana.",
+        "1978–1995: Conducts nationwide mail bombing campaign.",
+        "1995: Publishes manifesto in national newspapers.",
+        "1996: Arrested and sentenced to life imprisonment.",
+        "2023: Dies in federal custody."
       ],
       sidebar: {
         heading: "Quick Facts",
         items: [
           "Occupation: Mathematician, recluse",
-          "Crimes: Mail bombings across the U.S.",
-          "Conviction: Life imprisonment without parole",
-          "Death: 2023, in federal custody"
+          "Known for: Mail bombings against institutions",
+          "Conviction: Multiple life sentences without parole",
+          "Death: 2023 in federal custody"
         ]
       },
-      footer: "This page was generated using JavaScript with original content summarizing Ted Kaczynski’s life and crimes."
+      footer: "This page was created using JavaScript with original content about Ted Kaczynski."
     };
 
     function buildPage(data) {
@@ -127,8 +217,8 @@
         sbList.appendChild(li);
       });
       sidebar.appendChild(sbList);
-      content.appendChild(sidebar);
 
+      content.appendChild(sidebar);
       container.appendChild(content);
 
       const footer = document.createElement('footer');
