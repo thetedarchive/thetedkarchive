@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ted Kaczynski – Life and Legacy</title>
   <style>
-    /* Global dark theme */
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
       font-family: 'Verdana', sans-serif;
-      background-color: #0d0d0d; /* dark background */
-      color: #e6e6e6;           /* light text */
+      background-color: #0d0d0d; 
+      color: #e6e6e6;  
     }
 
     .container {
       max-width: 900px;
       margin: 50px auto;
       padding: 30px 40px;
-      background-color: #1c1c1c; /* darker container */
+      background-color: #1c1c1c; 
       border-radius: 12px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.8);
     }
@@ -27,14 +26,14 @@
     .headline {
       font-family: 'Courier New', monospace;
       font-size: 2.5em;
-      color: #ff4d4d; /* bright red headline */
+      color: #ff4d4d; 
       margin-bottom: 10px;
     }
 
     .subheadline {
       font-size: 1.3em;
       font-style: italic;
-      color: #ffa500; /* orange subheadline */
+      color: #ffa500; 
       margin-bottom: 15px;
     }
 
@@ -67,15 +66,15 @@
 
     .sidebar {
       flex: 1;
-      background-color: #262626; /* distinct dark gray */
-      border-left: 4px solid #ff4d4d; /* red accent border */
+      background-color: #262626; 
+      border-left: 4px solid #ff4d4d; 
       padding: 18px 20px;
       border-radius: 8px;
       font-size: 0.95em;
     }
 
     .sidebar h3 {
-      color: #ffa500; /* orange heading */
+      color: #ffa500; 
       margin-top: 0;
       font-size: 1.15em;
     }
@@ -99,7 +98,7 @@
       margin-bottom: 12px;
       padding-left: 20px;
       position: relative;
-      border-left: 3px solid #ffa500; /* vertical orange line */
+      border-left: 3px solid #ffa500; 
     }
 
     .timeline li::before {
@@ -109,7 +108,7 @@
       top: 5px;
       width: 14px;
       height: 14px;
-      background-color: #ff4d4d; /* red dot */
+      background-color: #ff4d4d; 
       border-radius: 50%;
     }
 
@@ -137,21 +136,9 @@
         "He was arrested in 1996 and received multiple life sentences to avoid the death penalty. Kaczynski remained in custody until his death in 2023, leaving a controversial and thought-provoking legacy."
       ],
       images: [
-        {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Ted_Kaczynski.jpg/440px-Ted_Kaczynski.jpg",
-          alt: "Ted Kaczynski portrait",
-          position: "top"
-        },
-        {
-          src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Abandoned_cabin.jpg",
-          alt: "Remote cabin in Montana",
-          position: "middle"
-        },
-        {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Montana_forest.jpg/440px-Montana_forest.jpg",
-          alt: "Montana forest",
-          position: "bottom"
-        }
+        { src: "images/Ted_Kaczynski.jpg", alt: "Ted Kaczynski portrait", position: "top" },
+        { src: "images/Montana_cabin.jpg", alt: "Remote cabin in Montana", position: "middle" },
+        { src: "images/Montana_forest.jpg", alt: "Montana forest", position: "bottom" }
       ],
       timeline: [
         "1942: Born in Chicago, Illinois.",
@@ -213,7 +200,7 @@
         p.textContent = pText;
         articleBody.appendChild(p);
 
-        // Insert middle image after second paragraph
+        // Middle image after second paragraph
         if(index === 1){
           const middleImg = data.images.find(img => img.position === "middle");
           if(middleImg){
@@ -225,7 +212,7 @@
         }
       });
 
-      // Insert bottom image at the end of article body
+      // Bottom image at the end
       const bottomImg = data.images.find(img => img.position === "bottom");
       if(bottomImg){
         const imgEl = document.createElement('img');
