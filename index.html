@@ -152,9 +152,9 @@
         "He was arrested in 1996 and received multiple life sentences to avoid the death penalty. Kaczynski remained in custody until his death in 2023, leaving a controversial and thought-provoking legacy."
       ],
       images: [
-        { src: "images/Barnes_1998_Unabomber_opener_1F-scaled.jpg", alt: "Ted Kaczynski portrait", position: "top" },
-        { src: "images/Ted_Kaczynski_2_(cropped).jpg", alt: "Remote cabin in Montana", position: "middle" },
-        { src: "images/Unabomber_-_FBI_Sketch_1987.jpg", alt: "Montana forest", position: "bottom" }
+        { src: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Ted_Kaczynski.jpg", alt: "Ted Kaczynski portrait", position: "top" },
+        { src: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Abandoned_cabin.jpg", alt: "Remote cabin in Montana", position: "middle" },
+        { src: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Montana_forest.jpg", alt: "Montana forest", position: "bottom" }
       ],
       timeline: [
         "1942: Born in Chicago, Illinois.",
@@ -173,7 +173,7 @@
           "Conviction: Multiple life sentences without parole",
           "Death: 2023 in federal custody"
         ],
-        image: "images/Young_theodore_kaczynski.jpeg" // added to sidebar
+        image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Young_Ted_Kaczynski.jpg"
       },
       footer: "This page was created using JavaScript with original content about Ted Kaczynski."
     };
@@ -218,7 +218,6 @@
         p.textContent = pText;
         articleBody.appendChild(p);
 
-        // Middle image after second paragraph
         if(index === 1){
           const middleImg = data.images.find(img => img.position === "middle");
           if(middleImg){
@@ -230,7 +229,6 @@
         }
       });
 
-      // Bottom image at the end
       const bottomImg = data.images.find(img => img.position === "bottom");
       if(bottomImg){
         const imgEl = document.createElement('img');
@@ -239,7 +237,6 @@
         articleBody.appendChild(imgEl);
       }
 
-      // Timeline
       const timelineDiv = document.createElement('div');
       const tHeading = document.createElement('h3');
       tHeading.textContent = "Timeline";
@@ -256,14 +253,12 @@
 
       content.appendChild(articleBody);
 
-      // Sidebar
       const sidebar = document.createElement('div');
       sidebar.className = 'sidebar';
       const sbHeading = document.createElement('h3');
       sbHeading.textContent = data.sidebar.heading;
       sidebar.appendChild(sbHeading);
 
-      // Sidebar image
       if(data.sidebar.image){
         const sbImg = document.createElement('img');
         sbImg.src = data.sidebar.image;
