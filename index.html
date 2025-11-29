@@ -68,8 +68,8 @@
 
     /* Top image smaller and centered */
     .top-image {
-      max-width: 60%; /* smaller width */
-      margin: 20px auto; /* centers image */
+      max-width: 60%;
+      margin: 20px auto;
       display: block;
     }
 
@@ -80,6 +80,13 @@
       padding: 18px 20px;
       border-radius: 8px;
       font-size: 0.95em;
+    }
+
+    .sidebar img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      display: block;
     }
 
     .sidebar h3 {
@@ -145,9 +152,9 @@
         "He was arrested in 1996 and received multiple life sentences to avoid the death penalty. Kaczynski remained in custody until his death in 2023, leaving a controversial and thought-provoking legacy."
       ],
       images: [
-        { src: "images/Ted_Kaczynski_2_(cropped).jpg, alt: "Ted Kaczynski portrait", position: "top" },
-        { src: "images/Barnes_1998_Unabomber_opener_1F-scaled.jpg, alt: "Remote cabin in Montana", position: "middle" },
-        { src: "images/Unabomber_-_FBI_Sketch_1987.jpg, alt: "Montana forest", position: "bottom" }
+        { src: "images/Barnes_1998_Unabomber_opener_1F-scaled.jpg", alt: "Ted Kaczynski portrait", position: "top" },
+        { src: "images/Ted_Kaczynski_2_(cropped).jpg", alt: "Remote cabin in Montana", position: "middle" },
+        { src: "images/Unabomber_-_FBI_Sketch_1987.jpg", alt: "Montana forest", position: "bottom" }
       ],
       timeline: [
         "1942: Born in Chicago, Illinois.",
@@ -165,7 +172,8 @@
           "Known for: Mail bombings against institutions",
           "Conviction: Multiple life sentences without parole",
           "Death: 2023 in federal custody"
-        ]
+        ],
+        image: "images/Young_theodore_kaczynski.jpeg" // added to sidebar
       },
       footer: "This page was created using JavaScript with original content about Ted Kaczynski."
     };
@@ -254,6 +262,15 @@
       const sbHeading = document.createElement('h3');
       sbHeading.textContent = data.sidebar.heading;
       sidebar.appendChild(sbHeading);
+
+      // Sidebar image
+      if(data.sidebar.image){
+        const sbImg = document.createElement('img');
+        sbImg.src = data.sidebar.image;
+        sbImg.alt = "Sidebar image";
+        sidebar.appendChild(sbImg);
+      }
+
       const sbList = document.createElement('ul');
       data.sidebar.items.forEach(item => {
         const li = document.createElement('li');
@@ -276,4 +293,3 @@
   </script>
 </body>
 </html>
-
