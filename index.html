@@ -60,8 +60,17 @@
 
     .article-body img {
       max-width: 100%;
+      height: auto;
       border-radius: 10px;
       margin: 20px 0;
+      display: block;
+    }
+
+    /* Top image smaller and centered */
+    .top-image {
+      max-width: 60%; /* smaller width */
+      margin: 20px auto; /* centers image */
+      display: block;
     }
 
     .sidebar {
@@ -138,7 +147,7 @@
       images: [
         { src: "images/Ted_Kaczynski_2_(cropped).jpg, alt: "Ted Kaczynski portrait", position: "top" },
         { src: "images/Barnes_1998_Unabomber_opener_1F-scaled.jpg, alt: "Remote cabin in Montana", position: "middle" },
-        { src: "images/Unabomber_-_FBI_Sketch_1987.jpg, alt: "Montana forest", position: "bottom" }
+        { src: "images/Unabomber_-_FBI_Sketch_1987.jpg", alt: "Montana forest", position: "bottom" }
       ],
       timeline: [
         "1942: Born in Chicago, Illinois.",
@@ -172,6 +181,7 @@
         const imgEl = document.createElement('img');
         imgEl.src = topImg.src;
         imgEl.alt = topImg.alt;
+        imgEl.className = 'top-image';
         container.appendChild(imgEl);
       }
 
@@ -266,5 +276,3 @@
   </script>
 </body>
 </html>
-
-
